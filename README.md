@@ -1,6 +1,6 @@
-# C-BIM Demo
+# chorobates Demo
 
-This public repository contains generated deployment artifacts for C-BIM. The
+This public repository contains generated deployment artifacts for chorobates. The
 private source repository builds and publishes `site/`; source code, tests,
 project history, and source maps are not mirrored here.
 
