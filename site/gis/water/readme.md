@@ -1,10 +1,19 @@
 # 水資源
 
+水資源分類管理流域與設施資料、測站點位及淹水潛勢面。一般資料與淹水來源各自轉接，完整向量、分類顯示與空間篩選共用 GIS 流程。
+
 顯示位置、範圍與淹水模擬結果；水位、蓄水量及雨量未接入即時觀測。
 
-## 模組定位
+<p align="center" dir="rtl">
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+  <a href="https://github.com/calvinmetcalf/shapefile-js"><img src="https://img.shields.io/badge/shpjs-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="shpjs" /></a>
+  <a href="https://csv.js.org/parse/"><img src="https://img.shields.io/badge/Node_CSV-csv--parse-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Node CSV：csv-parse" /></a>
+</p>
 
-水資源分類管理流域與設施資料、測站點位及淹水潛勢面。一般資料與淹水來源各自轉接，完整向量、分類顯示與空間篩選共用 GIS 流程。
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -61,8 +70,6 @@ flood-depths.json → depth_class → 共用配色與面高度
 - 淹水高度依 heightLevel 表示級距，使用共用顯示尺度，不是實際水深的等比例模型。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → water/datasets / flood → water/catalog / shared/source

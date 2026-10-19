@@ -1,10 +1,17 @@
 # 再生能源
 
-能源署離岸風電場址，以原始 TWD97 角點產製面幾何。
-
-## 模組定位
-
 再生能源分類管理離岸風場與潛力場址的完整面資料。轉接器讀取官方角點，共用產製模組發布向量；地圖以資料集 ID 使用面外觀、篩選與拉伸。
+
+<p align="center" dir="rtl">
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+  <a href="https://csv.js.org/parse/"><img src="https://img.shields.io/badge/Node_CSV-csv--parse-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Node CSV：csv-parse" /></a>
+  <a href="https://gitlab.com/catamphetamine/read-excel-file"><img src="https://img.shields.io/badge/read--excel--file-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="read-excel-file" /></a>
+  <a href="https://github.com/101arrowz/fflate"><img src="https://img.shields.io/badge/fflate-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="fflate" /></a>
+</p>
+
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -43,13 +50,10 @@ public/gis/energy/
 
 ## 邊界
 
-海上場址保留完整範圍，不套用預設陸地縣界。
-
-- 面拉伸使用共用固定顯示高度，資料中的容量等欄位不自動換算成高度。
+- 海上場址保留完整範圍，不套用預設陸地縣界。
+- 面拉伸使用固定顯示高度，容量等欄位不換算成高度。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → energy/datasets → energy/catalog / shared/source

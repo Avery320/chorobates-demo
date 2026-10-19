@@ -1,10 +1,16 @@
 # 交通
 
+交通分類管理車站點位及軌道、道路線資料。分類轉接器處理官方欄位與道路類別，查詢、圖徵互動及點線 3D 顯示使用 GIS 共用模組。
+
 國土測繪中心圖資，採政府資料開放授權條款第 1 版。
 
-## 模組定位
+<p align="center" dir="rtl">
+  <a href="https://github.com/calvinmetcalf/shapefile-js"><img src="https://img.shields.io/badge/shpjs-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="shpjs" /></a>
+</p>
 
-交通分類管理車站點位及軌道、道路線資料。分類轉接器處理官方欄位與道路類別，查詢、圖徵互動及點線 3D 顯示使用 GIS 共用模組。
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -56,8 +62,6 @@ public/gis/transport/
 - 線光幕只連接同一路徑內相鄰段，保留圖徵身分與篩選造成的斷點。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → transport/datasets → transport/catalog / shared/source

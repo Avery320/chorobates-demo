@@ -1,10 +1,17 @@
 # 環境
 
-顯示受保護樹木、生態範圍與天然植群分類。
-
-## 模組定位
-
 環境分類管理三市樹木、生態保育範圍及植群資料。樹木、生態與植群轉接器各自處理來源欄位，資產產製、查詢及顯示沿用 GIS 共用流程。
+
+<p align="center" dir="rtl">
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+  <a href="https://github.com/calvinmetcalf/shapefile-js"><img src="https://img.shields.io/badge/shpjs-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="shpjs" /></a>
+  <a href="https://csv.js.org/parse/"><img src="https://img.shields.io/badge/Node_CSV-csv--parse-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Node CSV：csv-parse" /></a>
+</p>
+
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -60,8 +67,6 @@ public/gis/environment/
 - 天然植群配色由分類表提供；目前未設定高度級距，面拉伸使用共用固定高度。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → trees / ecology / vegetation → environment/catalog / shared/source

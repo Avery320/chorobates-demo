@@ -1,10 +1,10 @@
 # 底圖與地形
 
-線上服務按地圖位置與縮放載入。
-
-## 模組定位
-
 底圖分類保存 OpenFreeMap 樣式與 Mapterhorn DEM 的服務契約。MapLibre 串流載入底圖與高程，GIS 渲染模組管理建築、主題圖層順序及地形安裝。
+
+<p align="center" dir="rtl">
+  <a href="https://maplibre.org/"><img src="https://img.shields.io/badge/MapLibre-GL_JS-396CB2?style=flat&amp;logo=maplibre&amp;logoColor=white" alt="MapLibre GL JS" /></a>
+</p>
 
 ## 主要功能
 
@@ -33,10 +33,10 @@ DEM 地表高程 → MapLightBeams 點線定位
 
 ## 主要資料
 
-| 服務        | 顯示內容                                           | 來源與授權                                                                                                                                                                                                 |
-| ----------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 服務        | 顯示內容                                           | 來源與授權                                                                                                                                                                                                             |
+| ----------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | OpenFreeMap | 向量底圖、字形及圖示                               | [服務與樣式](https://openfreemap.org/)；[OpenMapTiles](https://openmaptiles.org/)／[OpenStreetMap](https://www.openstreetmap.org/copyright)；[程式授權](https://github.com/hyperknot/openfreemap/blob/main/LICENSE.md) |
-| Mapterhorn  | DEM 高程圖磚，供 MapLibre 地形、陰影及光效地表定位 | [服務](https://mapterhorn.com/)；各高程來源的 [attribution 與條款](https://mapterhorn.com/attribution/)；[程式](https://github.com/mapterhorn/mapterhorn)為 BSD-3-Clause                                   |
+| Mapterhorn  | DEM 高程圖磚，供 MapLibre 地形、陰影及光效地表定位 | [服務](https://mapterhorn.com/)；各高程來源的 [attribution 與條款](https://mapterhorn.com/attribution/)；[程式](https://github.com/mapterhorn/mapterhorn)為 BSD-3-Clause                                               |
 
 `services` 保存樣式 URL 與 `raster-dem` 來源；設定入口見 [catalog.mjs](../../../scripts/gis/basemap/catalog.mjs)。
 
@@ -47,8 +47,6 @@ DEM 地表高程 → MapLightBeams 點線定位
 - 地形倍率由 MapProjectView.terrain 指定；光效使用 MapLibre 回傳的顯示高程。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 MapBasemapLayers / MapProjectView → GisSnapshot → basemap manifest

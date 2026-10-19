@@ -1,10 +1,12 @@
 # 廢棄物
 
+廢棄物分類管理焚化廠及兩類掩埋場點資料。來源轉接器整理身分、座標及容量欄位，發布後使用共用點樣式與查詢。
+
 環境管理署設施點位；容量與現況依原統計日期，未接入即時排放或營運資料。
 
-## 模組定位
-
-廢棄物分類管理焚化廠及兩類掩埋場點資料。來源轉接器整理身分、座標及容量欄位，發布後使用共用點樣式與查詢。
+<p align="center" dir="rtl">
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+</p>
 
 ## 主要功能
 
@@ -49,8 +51,6 @@ public/gis/waste/
 - 設施現況由來源欄位呈現，各圖徵保留官方身分。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → waste/datasets → waste/catalog / shared/source

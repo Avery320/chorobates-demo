@@ -2,6 +2,18 @@
 
 GIS 圖資系統按分類管理台灣主題資料、分類圖例與線上地圖服務，提供地圖顯示及完整向量篩選所需的資料。
 
+<p align="center" dir="rtl">
+  <a href="https://maplibre.org/"><img src="https://img.shields.io/badge/MapLibre-GL_JS-396CB2?style=flat&amp;logo=maplibre&amp;logoColor=white" alt="MapLibre GL JS" /></a>
+  <a href="https://github.com/protomaps/PMTiles"><img src="https://img.shields.io/badge/PMTiles-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="PMTiles" /></a>
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+  <a href="https://turfjs.org/"><img src="https://img.shields.io/badge/Turf-bbox-1FCE6D?style=flat" alt="Turf：bbox" /></a>
+</p>
+
+<p align="center" dir="rtl">
+  <a href="../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+  <a href="../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
+
 ## 模組定位
 
 資料定義與產製位於 `scripts/gis`，部署資產位於 `public/gis`，載入、查詢及顯示位於 `src/gis`。每個分類維護自己的來源與欄位，共用模組處理資產發布、幾何運算及點線面顯示。
@@ -38,30 +50,6 @@ src/gis/
 └── view/                        # 視窗狀態、搜尋、識別與地形設定
 ```
 
-## 模組分層
-
-### 應用層
-
-- [refresh.mjs](../../scripts/gis/refresh.mjs)：呼叫分類轉接器，組裝產製與發布流程。
-- [MapViewController](../../src/gis/view/MapViewController.ts)／[MapViewManager](../../src/gis/view/MapViewManager.ts)：管理各視窗的圖層、條件與互動，提供面板操作及狀態訂閱。
-
-### Domain 與功能層
-
-- 分類轉接器：解析官方資料，轉換欄位與座標，輸出 `{ id, features }`。
-- [MapQuery](../../src/gis/query/MapQuery.ts)／[MapQueryEngine](../../src/gis/query/MapQueryEngine.ts)：編譯條件，執行欄位、縣市及空間篩選，重用未變的運算階段。
-
-### Projection 與 UI 層
-
-- [MapLayerCatalog](../../src/gis/layers/MapLayerCatalog.ts)／[MapLayerStyle](../../src/gis/layers/MapLayerStyle.ts)：登錄圖層，以資料集 ID 建立幾何、欄位、外觀及控制項設定。
-- [MapLayerRenderer](../../src/gis/layers/MapLayerRenderer.ts)：將資料結果與互動狀態同步至 MapLibre 圖層；[MapLightBeams](../../src/gis/layers/MapLightBeams.ts) 處理點線光效，[MapTerrain](../../src/gis/view/MapTerrain.ts) 安裝地形與陰影。
-- [Map Layers](../../src/ui-templates/sections/map-layers.ts)／[Map Explorer](../../src/ui-templates/sections/map-explorer.ts)：呈現作用中地圖的設定、條件與結果。
-
-### 基礎層
-
-- [shared/catalog](../../scripts/gis/shared/catalog.mjs)／[shared/source](../../scripts/gis/shared/source.mjs)／[shared/snapshot](../../scripts/gis/shared/snapshot.mjs)：彙整資料契約，共用下載、資產產製、驗證及發布。
-- [GisSnapshot](../../src/gis/data/GisSnapshot.ts)／[GisAssetLoader](../../src/gis/data/GisAssetLoader.ts)：取得資料集與服務設定，驗證、解壓及解析本地 JSON 資產。
-- [MapGeometry](../../src/gis/data/MapGeometry.ts)：共用圖徵身分、投影及 GEOS 幾何操作；[MapLayerTypes](../../src/gis/layers/MapLayerTypes.ts) 定義圖層與外觀契約。
-
 ## 主要資料
 
 | 資料                 | 內容與維護入口                                     |
@@ -73,31 +61,6 @@ src/gis/
 | 圖例 JSON            | 分類值與配色，部分分類含面拉伸的 `heightLevel`     |
 
 瀏覽器契約與操作入口見 [GIS 模組的主要資料](../../src/gis/README.md#主要資料)及[共用 API](../../src/gis/README.md#共用-api)。
-
-## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
-
-```text
-refresh.mjs
-├──→ 分類轉接器
-└──→ shared/catalog / source / snapshot
-
-shared/catalog ──→ 分類 catalog
-shared/source ───→ MapGeometry
-shared/snapshot ─→ 分類 manifest 與資產（讀取／發布）
-
-MapViewController
-├──→ MapQueryClient → MapQuery.worker → MapQueryEngine
-└──→ MapLayerRenderer → MapLightBeams / MapTerrain
-
-查詢與渲染 ──→ MapLayerCatalog → Map*Layers → MapLayerStyle
-                                               └──→ GisSnapshot → 分類 manifest
-資產載入 ────→ GisAssetLoader → GisSnapshot
-產製與查詢 ──→ MapGeometry → GEOS / proj4
-```
-
-查詢與渲染共用資料集登錄；圖磚串流由 MapLibre／PMTiles 處理，完整分析向量由 worker 載入並快取。
 
 ## 核心資料流
 
@@ -115,31 +78,7 @@ MapViewController
 
 分類 manifest 保存資產路徑、雜湊、筆數、縣市統計及排除紀錄。GeoJSON 保留完整向量；PMTiles 提供顯示與區域圖磚。
 
-### 載入、篩選與顯示
-
-```text
-分類 manifest → GisSnapshot → 資料集 / 資產 / 服務設定
-
-圖層與條件 → MapQuery → MapQueryClient → worker
-             → 完整向量載入 → 欄位 / 縣市 / 空間運算
-             → DatasetView
-               ├──→ MapLayerRenderer → 2D / 3D 顯示
-               └──→ 結果紀錄 → Results
-
-顯示圖磚 / 線上影像 / DEM → MapLibre 按位置及縮放載入
-```
-
-範圍條件裁切幾何，距離條件保留符合距離的完整圖徵。查詢重用未變階段，結果與渲染按圖徵 ID 更新；選取、隱藏與改色由同一份視窗互動狀態管理。
-
-### 3D 顯示
-
-| 幾何 | 顯示方式                                      |
-| ---- | --------------------------------------------- |
-| 點   | 原點位加上向外擴散、向上漸淡的圓錐光效        |
-| 線   | 原線加上垂直光幕，沿篩選後路徑繪製並保留斷點  |
-| 面   | MapLibre 面拉伸；配色與可選高度級距共用分類表 |
-
-光效及拉伸參數位於 `MapLayerStyle`，地表高程來自 DEM。實作說明見 [GIS 模組的 3D 顯示](../../src/gis/README.md#3d-顯示)。
+載入、查詢與 3D 顯示見 [GIS 模組](../../src/gis/README.md)。
 
 ## 邊界
 

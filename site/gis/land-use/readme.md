@@ -1,10 +1,10 @@
 # 土地使用
 
-國土測繪中心土地利用現況影像，保留官方配色；點選位置查詢官方分類。
+土地使用分類以國土測繪中心影像顯示現況，並以位置查詢取得分類說明。服務契約由分類維護，外觀與識別由 GIS 共用模組處理。
 
-## 模組定位
-
-土地使用分類以官方影像顯示現況，並以位置查詢取得分類說明。服務契約由分類維護，外觀與識別由 GIS 共用模組處理。
+<p align="center" dir="rtl">
+  <a href="https://maplibre.org/"><img src="https://img.shields.io/badge/MapLibre-GL_JS-396CB2?style=flat&amp;logo=maplibre&amp;logoColor=white" alt="MapLibre GL JS" /></a>
+</p>
 
 ## 主要功能
 
@@ -46,8 +46,6 @@ land-use/catalog.mjs → manifest → GisSnapshot
 資料為現況調查，非地籍或法定使用分區。影像與位置查詢版本可能不同；本分類提供影像與位置查詢，無本地完整向量。條款依 NLSC 服務，官方來源文字與連結顯示於 Map Layers 的圖層設定底部。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 MapLandUseLayers → rasterStyle → GisSnapshot → land-use manifest

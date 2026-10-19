@@ -1,10 +1,19 @@
 # 行政區
 
+行政區提供 GIS 共用的縣市範圍與搜尋索引。資料集的縣市筆數及裁切圖磚由產製流程寫入各自分類；瀏覽器載入時將這些筆數與縣市索引合併。
+
 國土測繪中心縣市界供搜尋、區域篩選及圖資裁切使用。來源與授權見 [政府資料開放平臺](https://data.gov.tw/dataset/7442)。
 
-## 模組定位
+<p align="center" dir="rtl">
+  <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
+  <a href="https://turfjs.org/"><img src="https://img.shields.io/badge/Turf-bbox-1FCE6D?style=flat" alt="Turf：bbox" /></a>
+  <a href="https://github.com/calvinmetcalf/shapefile-js"><img src="https://img.shields.io/badge/shpjs-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="shpjs" /></a>
+</p>
 
-行政區提供 GIS 共用的縣市範圍與搜尋索引。資料集的縣市筆數及裁切圖磚由產製流程寫入各自分類；瀏覽器載入時將這些筆數與縣市索引合併。
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -47,8 +56,6 @@ public/gis/administrative/
 - 各資料集的縣市統計位於所屬分類 manifest，透過縣市界雜湊連接裁切版本。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → administrative/datasets → shared/source + MapGeometry

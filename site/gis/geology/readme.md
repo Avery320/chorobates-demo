@@ -1,10 +1,11 @@
 # 地質
 
-經濟部地質調查及礦業管理中心圖資。
+地質分類整合經濟部地質調查及礦業管理中心的活動斷層、液化潛勢與地表地層圖資。斷層及液化提供本地完整向量，地層由官方影像服務按縮放載入。
 
-## 模組定位
-
-地質分類整合活動斷層線、液化潛勢面與地表地層影像。斷層及液化提供本地完整向量，地層由官方影像服務按縮放載入。
+<p align="center" dir="rtl">
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/GEOS_WASM-review_pending-808080?style=flat" alt="GEOS WASM 授權：待釐清" /></a>
+  <a href="../../../third-party/README.md#待釐清項目"><img src="https://img.shields.io/badge/Tippecanoe-review_pending-808080?style=flat" alt="Tippecanoe 授權：待釐清" /></a>
+</p>
 
 ## 主要功能
 
@@ -53,8 +54,6 @@ public/gis/geology/
 - 斷層實線／虛線由原線樣式呈現，3D 光幕沿查詢後的路徑顯示。
 
 ## 依賴方向
-
-箭頭表示「使用者 → 被依賴模組」。
 
 ```text
 refresh → geology/datasets → shared/source / liquefaction-potentials.json
