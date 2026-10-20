@@ -1,13 +1,12 @@
 # 水資源
 
-水資源分類管理流域與設施資料、測站點位及淹水潛勢面。一般資料與淹水來源各自轉接，完整向量、分類顯示與空間篩選共用 GIS 流程。
+水資源分類管理流域、水利設施與淹水潛勢面。一般資料與淹水來源各自轉接，完整向量、分類顯示與空間篩選共用 GIS 流程。
 
 顯示位置、範圍與淹水模擬結果；水位、蓄水量及雨量未接入即時觀測。
 
 <p align="center" dir="rtl">
   <a href="https://github.com/proj4js/proj4js"><img src="https://img.shields.io/badge/Proj4js-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Proj4js" /></a>
   <a href="https://github.com/calvinmetcalf/shapefile-js"><img src="https://img.shields.io/badge/shpjs-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="shpjs" /></a>
-  <a href="https://csv.js.org/parse/"><img src="https://img.shields.io/badge/Node_CSV-csv--parse-CB3837?style=flat&amp;logo=npm&amp;logoColor=white" alt="Node CSV：csv-parse" /></a>
 </p>
 
 <p align="center" dir="rtl">
@@ -18,7 +17,7 @@
 ## 主要功能
 
 - 產製流域、河道、集水區與水利設施的點面資料。
-- 保留測站身分與官方設施欄位。
+- 保留官方設施身分與欄位。
 - 將淹水深度分類連接至配色及面拉伸級距。
 
 ## 模組架構
@@ -29,11 +28,8 @@
 public/gis/water/
 ├── manifest.json                # 產生的分類資料與服務契約
 ├── basins/                      # 流域面
-├── detention-basins/            # 滯洪池點位
 ├── flood-potential/             # 淹水潛勢面與深度分類表
-├── groundwater-wells/           # 地下水觀測井點位
 ├── reservoirs/                  # 水庫壩體點與集水區面
-├── river-level-stations/        # 河川水位測站點位
 ├── rivers/                      # 河道面
 └── readme.md                    # 分類說明與維護入口
 ```
@@ -55,9 +51,6 @@ flood-depths.json → depth_class → 共用配色與面高度
 | 河道         | 面：河道範圍                              | [水利署](https://data.gov.tw/dataset/25781)                                            |
 | 水庫集水區   | 面：集水範圍                              | [水利署](https://data.gov.tw/dataset/129474)                                           |
 | 水庫壩體     | 點：壩體位置                              | [水利署](https://data.gov.tw/dataset/25776)                                            |
-| 滯洪池       | 點：臺南與桃園設施                        | [臺南](https://data.gov.tw/dataset/108523)、[桃園](https://data.gov.tw/dataset/152950) |
-| 河川水位測站 | 點：站址與站碼                            | [水利署](https://data.gov.tw/dataset/25784)                                            |
-| 地下水觀測井 | 點：井址與井碼                            | [水利署](https://data.gov.tw/dataset/32725)                                            |
 | 淹水潛勢     | 面：第三代 650 mm／24 h 模擬，2019 年建置 | [水利署](https://data.gov.tw/dataset/25766)                                            |
 
 淹水 `depth_class` 連接五級分類的 `color`／`heightLevel`；其餘面資料使用共用固定高度。尺寸及高度入口見 [3D 顯示](../../../src/gis/README.md#3d-顯示)。
@@ -66,7 +59,7 @@ flood-depths.json → depth_class → 共用配色與面高度
 
 ## 邊界
 
-- 河道使用面幾何；集水區保存集水範圍，滯洪池資料為位置點。
+- 河道使用面幾何；集水區保存集水範圍，水庫壩體資料為位置點。
 - 淹水高度依 heightLevel 表示級距，使用共用顯示尺度，不是實際水深的等比例模型。
 
 ## 依賴方向

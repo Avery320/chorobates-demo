@@ -94,11 +94,11 @@ src/gis/
 | [底圖與地形](basemap/readme.md)    | OpenFreeMap 底圖、Mapterhorn 高程圖磚 |
 | [土地使用](land-use/readme.md)     | 官方土地使用影像與位置查詢            |
 | [交通](transport/readme.md)        | 車站、軌道與道路                      |
-| [水資源](water/readme.md)          | 流域、河道、設施、測站與淹水潛勢      |
+| [水資源](water/readme.md)          | 流域、河道、水利設施與淹水潛勢        |
 | [再生能源](energy/readme.md)       | 離岸風場與風電潛力場址                |
 | [環境](environment/readme.md)      | 受保護樹木、生態範圍與天然植群        |
 | [廢棄物](waste/readme.md)          | 焚化廠與掩埋場                        |
-| [地質](geology/readme.md)          | 斷層、液化潛勢與地表地層              |
+| [地質](geology/readme.md)          | 活動斷層與土壤液化潛勢                |
 | [行政區](administrative/readme.md) | 縣市界與搜尋索引                      |
 
 分類文件記錄資料意義與官方來源、授權依據；開源模組與授權見 [GIS 依賴說明](../../src/gis/README.md#開源依賴與來源)。

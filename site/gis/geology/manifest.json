@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "id": "03fe6a72994c33634e30",
+  "id": "416042f006a1bccc17ae",
   "label": "地質 Geology",
   "topics": {
     "gsmma-active-faults": {
@@ -12,24 +12,6 @@
       "directory": "geology/soil-liquefaction",
       "label": "土壤液化潛勢 Liquefaction",
       "delivery": "local"
-    },
-    "gsmma-surface-geology": {
-      "directory": "geology/surface-geology",
-      "label": "地表地層 Geology",
-      "delivery": "online"
-    }
-  },
-  "services": {
-    "gsmma-surface-geology": {
-      "type": "raster",
-      "tiles": [
-        "https://geomap.gsmma.gov.tw/api/Tile/v1/getTile.cfm?layer=CGS_CGS_MAP&z={z}&x={x}&y={y}"
-      ],
-      "tileSize": 256,
-      "minzoom": 1,
-      "maxzoom": 17,
-      "attribution": "© <a href=\"https://www.gsmma.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部地質調查及礦業管理中心</a>",
-      "bounds": [117, 21, 123, 27]
     }
   },
   "datasets": {
