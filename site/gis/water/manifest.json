@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "id": "3b83d7122354daa3137e",
+  "id": "e0c1d47cde2ad1df449f",
   "label": "水資源 Water",
   "topics": {
     "wra-basins": {
@@ -224,8 +224,8 @@
         },
         {
           "property": "depth_class",
-          "label": "官方深度分級",
-          "query": "string"
+          "role": "category",
+          "label": "官方深度分級"
         },
         {
           "property": "county",

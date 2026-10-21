@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "id": "d0a1a94c3cd871071c1b",
+  "id": "f741f3a13c50c7609c90",
   "label": "環境 Environment",
   "topics": {
     "tw-protected-trees": {
@@ -467,10 +467,12 @@
         },
         {
           "property": "altitude_zone",
+          "role": "category",
           "label": "原始海拔帶代碼"
         },
         {
           "property": "original_code",
+          "role": "category",
           "label": "原始數值代碼"
         },
         {

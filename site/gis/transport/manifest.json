@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "id": "70a657d05f7bccebca36",
+  "id": "8e4412df1f589cf4abae",
   "label": "交通 Transport",
   "topics": {
     "nlsc-thsr-stations": {
@@ -182,6 +182,7 @@
         },
         {
           "property": "original_type",
+          "role": "category",
           "label": "官方路線類型代碼"
         },
         {
@@ -242,6 +243,7 @@
         },
         {
           "property": "original_type",
+          "role": "category",
           "label": "官方路線類型代碼"
         },
         {
